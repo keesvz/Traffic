@@ -29,19 +29,21 @@ namespace Traffic
         private void InitializeComponent()
         {
             this.aveSpeedLabel = new System.Windows.Forms.Label();
-            this.timeSpeedupUpDown = new System.Windows.Forms.NumericUpDown();
+            this.nudTimeSpeedup = new System.Windows.Forms.NumericUpDown();
             this.timeSpeedupLabel = new System.Windows.Forms.Label();
-            this.timeBetweenVehiclesUpDown = new System.Windows.Forms.NumericUpDown();
+            this.nudTimeBetweenVehicles = new System.Windows.Forms.NumericUpDown();
             this.timeBetweenVehiclesLabel = new System.Windows.Forms.Label();
-            this.truckCarRatioUpDown = new System.Windows.Forms.NumericUpDown();
+            this.nudTruckCarRatio = new System.Windows.Forms.NumericUpDown();
             this.truckCarRatioLabel = new System.Windows.Forms.Label();
-            this.timeVariabilityUpDown = new System.Windows.Forms.NumericUpDown();
+            this.nudTimeVariability = new System.Windows.Forms.NumericUpDown();
             this.vehicleVariability = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.parameterGroupBox = new System.Windows.Forms.GroupBox();
+            this.rdbMph = new System.Windows.Forms.RadioButton();
+            this.rdbKmh = new System.Windows.Forms.RadioButton();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.chkFixedTime = new System.Windows.Forms.CheckBox();
             this.chkFixedSeed = new System.Windows.Forms.CheckBox();
@@ -54,14 +56,14 @@ namespace Traffic
             this.label14 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lblTruckSpeedCappedUnit = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.roadblockLabel = new System.Windows.Forms.Label();
-            this.speedVariability = new System.Windows.Forms.NumericUpDown();
+            this.nudSpeedVariability = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.speedVariabilityLabel = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblSpeedVariability = new System.Windows.Forms.Label();
+            this.lblSpeedVariabilityRange = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -77,35 +79,35 @@ namespace Traffic
             this.lblRoadLength = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.vehiclesOnRoadLabel = new System.Windows.Forms.Label();
-            this.lblStripLength = new System.Windows.Forms.Label();
+            this.lblStripeLength = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.lblVehiclesExited = new System.Windows.Forms.Label();
             this.lblVehiclesOnRoad = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblRoadLengthUnit = new System.Windows.Forms.Label();
+            this.lblStripeLengthUnit = new System.Windows.Forms.Label();
             this.lblRunTime = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.lblMaxSpeedUnit = new System.Windows.Forms.Label();
             this.lblMaxSpeed = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblAvgSpeedUnit = new System.Windows.Forms.Label();
             this.lblAveSpeed = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblMinSpeedUnit = new System.Windows.Forms.Label();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.loadButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.timeSpeedupUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeBetweenVehiclesUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.truckCarRatioUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeVariabilityUpDown)).BeginInit();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSpeedup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeBetweenVehicles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTruckCarRatio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeVariability)).BeginInit();
             this.parameterGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTruckMaxSpeedVariability)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTruckMaxSpeed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speedVariability)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpeedVariability)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSlowPokeProbability)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSeconds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).BeginInit();
@@ -123,30 +125,30 @@ namespace Traffic
             this.aveSpeedLabel.TabIndex = 0;
             this.aveSpeedLabel.Text = "Min speed";
             // 
-            // timeSpeedupUpDown
+            // nudTimeSpeedup
             // 
-            this.timeSpeedupUpDown.DecimalPlaces = 2;
-            this.timeSpeedupUpDown.Enabled = false;
-            this.timeSpeedupUpDown.Increment = new decimal(new int[] {
+            this.nudTimeSpeedup.DecimalPlaces = 2;
+            this.nudTimeSpeedup.Enabled = false;
+            this.nudTimeSpeedup.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.timeSpeedupUpDown.Location = new System.Drawing.Point(130, 22);
-            this.timeSpeedupUpDown.Maximum = new decimal(new int[] {
+            this.nudTimeSpeedup.Location = new System.Drawing.Point(130, 22);
+            this.nudTimeSpeedup.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.timeSpeedupUpDown.Minimum = new decimal(new int[] {
+            this.nudTimeSpeedup.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.timeSpeedupUpDown.Name = "timeSpeedupUpDown";
-            this.timeSpeedupUpDown.Size = new System.Drawing.Size(50, 20);
-            this.timeSpeedupUpDown.TabIndex = 1;
-            this.timeSpeedupUpDown.Value = new decimal(new int[] {
+            this.nudTimeSpeedup.Name = "nudTimeSpeedup";
+            this.nudTimeSpeedup.Size = new System.Drawing.Size(50, 20);
+            this.nudTimeSpeedup.TabIndex = 1;
+            this.nudTimeSpeedup.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -161,29 +163,29 @@ namespace Traffic
             this.timeSpeedupLabel.TabIndex = 2;
             this.timeSpeedupLabel.Text = "Time speedup";
             // 
-            // timeBetweenVehiclesUpDown
+            // nudTimeBetweenVehicles
             // 
-            this.timeBetweenVehiclesUpDown.DecimalPlaces = 2;
-            this.timeBetweenVehiclesUpDown.Increment = new decimal(new int[] {
+            this.nudTimeBetweenVehicles.DecimalPlaces = 2;
+            this.nudTimeBetweenVehicles.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.timeBetweenVehiclesUpDown.Location = new System.Drawing.Point(130, 43);
-            this.timeBetweenVehiclesUpDown.Maximum = new decimal(new int[] {
+            this.nudTimeBetweenVehicles.Location = new System.Drawing.Point(130, 43);
+            this.nudTimeBetweenVehicles.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.timeBetweenVehiclesUpDown.Minimum = new decimal(new int[] {
+            this.nudTimeBetweenVehicles.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.timeBetweenVehiclesUpDown.Name = "timeBetweenVehiclesUpDown";
-            this.timeBetweenVehiclesUpDown.Size = new System.Drawing.Size(50, 20);
-            this.timeBetweenVehiclesUpDown.TabIndex = 1;
-            this.timeBetweenVehiclesUpDown.Value = new decimal(new int[] {
+            this.nudTimeBetweenVehicles.Name = "nudTimeBetweenVehicles";
+            this.nudTimeBetweenVehicles.Size = new System.Drawing.Size(50, 20);
+            this.nudTimeBetweenVehicles.TabIndex = 1;
+            this.nudTimeBetweenVehicles.Value = new decimal(new int[] {
             15,
             0,
             0,
@@ -198,19 +200,19 @@ namespace Traffic
             this.timeBetweenVehiclesLabel.TabIndex = 2;
             this.timeBetweenVehiclesLabel.Text = "Time between vehicles";
             // 
-            // truckCarRatioUpDown
+            // nudTruckCarRatio
             // 
-            this.truckCarRatioUpDown.DecimalPlaces = 3;
-            this.truckCarRatioUpDown.Increment = new decimal(new int[] {
+            this.nudTruckCarRatio.DecimalPlaces = 3;
+            this.nudTruckCarRatio.Increment = new decimal(new int[] {
             1,
             0,
             0,
             196608});
-            this.truckCarRatioUpDown.Location = new System.Drawing.Point(130, 85);
-            this.truckCarRatioUpDown.Name = "truckCarRatioUpDown";
-            this.truckCarRatioUpDown.Size = new System.Drawing.Size(50, 20);
-            this.truckCarRatioUpDown.TabIndex = 1;
-            this.truckCarRatioUpDown.Value = new decimal(new int[] {
+            this.nudTruckCarRatio.Location = new System.Drawing.Point(130, 85);
+            this.nudTruckCarRatio.Name = "nudTruckCarRatio";
+            this.nudTruckCarRatio.Size = new System.Drawing.Size(50, 20);
+            this.nudTruckCarRatio.TabIndex = 1;
+            this.nudTruckCarRatio.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -225,24 +227,24 @@ namespace Traffic
             this.truckCarRatioLabel.TabIndex = 2;
             this.truckCarRatioLabel.Text = "Truck/car ratio";
             // 
-            // timeVariabilityUpDown
+            // nudTimeVariability
             // 
-            this.timeVariabilityUpDown.DecimalPlaces = 2;
-            this.timeVariabilityUpDown.Increment = new decimal(new int[] {
+            this.nudTimeVariability.DecimalPlaces = 2;
+            this.nudTimeVariability.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.timeVariabilityUpDown.Location = new System.Drawing.Point(130, 64);
-            this.timeVariabilityUpDown.Maximum = new decimal(new int[] {
+            this.nudTimeVariability.Location = new System.Drawing.Point(130, 64);
+            this.nudTimeVariability.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.timeVariabilityUpDown.Name = "timeVariabilityUpDown";
-            this.timeVariabilityUpDown.Size = new System.Drawing.Size(50, 20);
-            this.timeVariabilityUpDown.TabIndex = 1;
-            this.timeVariabilityUpDown.Value = new decimal(new int[] {
+            this.nudTimeVariability.Name = "nudTimeVariability";
+            this.nudTimeVariability.Size = new System.Drawing.Size(50, 20);
+            this.nudTimeVariability.TabIndex = 1;
+            this.nudTimeVariability.Value = new decimal(new int[] {
             5,
             0,
             0,
@@ -295,30 +297,32 @@ namespace Traffic
             // 
             // parameterGroupBox
             // 
+            this.parameterGroupBox.Controls.Add(this.rdbMph);
+            this.parameterGroupBox.Controls.Add(this.rdbKmh);
             this.parameterGroupBox.Controls.Add(this.checkBox1);
             this.parameterGroupBox.Controls.Add(this.chkFixedTime);
             this.parameterGroupBox.Controls.Add(this.chkFixedSeed);
             this.parameterGroupBox.Controls.Add(this.chkPassOnRight);
             this.parameterGroupBox.Controls.Add(this.chkTruckMaxSpeed);
             this.parameterGroupBox.Controls.Add(this.chkRoadBlock);
-            this.parameterGroupBox.Controls.Add(this.timeSpeedupUpDown);
+            this.parameterGroupBox.Controls.Add(this.nudTimeSpeedup);
             this.parameterGroupBox.Controls.Add(this.nudTruckMaxSpeedVariability);
-            this.parameterGroupBox.Controls.Add(this.timeBetweenVehiclesUpDown);
+            this.parameterGroupBox.Controls.Add(this.nudTimeBetweenVehicles);
             this.parameterGroupBox.Controls.Add(this.nudTruckMaxSpeed);
-            this.parameterGroupBox.Controls.Add(this.truckCarRatioUpDown);
+            this.parameterGroupBox.Controls.Add(this.nudTruckCarRatio);
             this.parameterGroupBox.Controls.Add(this.label99);
             this.parameterGroupBox.Controls.Add(this.label14);
             this.parameterGroupBox.Controls.Add(this.label10);
             this.parameterGroupBox.Controls.Add(this.label25);
-            this.parameterGroupBox.Controls.Add(this.label26);
+            this.parameterGroupBox.Controls.Add(this.lblTruckSpeedCappedUnit);
             this.parameterGroupBox.Controls.Add(this.label23);
             this.parameterGroupBox.Controls.Add(this.roadblockLabel);
-            this.parameterGroupBox.Controls.Add(this.timeVariabilityUpDown);
-            this.parameterGroupBox.Controls.Add(this.speedVariability);
+            this.parameterGroupBox.Controls.Add(this.nudTimeVariability);
+            this.parameterGroupBox.Controls.Add(this.nudSpeedVariability);
             this.parameterGroupBox.Controls.Add(this.label11);
             this.parameterGroupBox.Controls.Add(this.label2);
             this.parameterGroupBox.Controls.Add(this.timeSpeedupLabel);
-            this.parameterGroupBox.Controls.Add(this.speedVariabilityLabel);
+            this.parameterGroupBox.Controls.Add(this.lblSpeedVariability);
             this.parameterGroupBox.Controls.Add(this.label3);
             this.parameterGroupBox.Controls.Add(this.vehicleVariability);
             this.parameterGroupBox.Controls.Add(this.label4);
@@ -326,7 +330,7 @@ namespace Traffic
             this.parameterGroupBox.Controls.Add(this.label5);
             this.parameterGroupBox.Controls.Add(this.timeBetweenVehiclesLabel);
             this.parameterGroupBox.Controls.Add(this.label6);
-            this.parameterGroupBox.Controls.Add(this.label7);
+            this.parameterGroupBox.Controls.Add(this.lblSpeedVariabilityRange);
             this.parameterGroupBox.Controls.Add(this.label22);
             this.parameterGroupBox.Controls.Add(this.label21);
             this.parameterGroupBox.Controls.Add(this.label9);
@@ -341,6 +345,33 @@ namespace Traffic
             this.parameterGroupBox.TabIndex = 4;
             this.parameterGroupBox.TabStop = false;
             this.parameterGroupBox.Text = "Parameters";
+            // 
+            // rdbMph
+            // 
+            this.rdbMph.AutoSize = true;
+            this.rdbMph.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbMph.Location = new System.Drawing.Point(579, 110);
+            this.rdbMph.Name = "rdbMph";
+            this.rdbMph.Size = new System.Drawing.Size(45, 17);
+            this.rdbMph.TabIndex = 4;
+            this.rdbMph.TabStop = true;
+            this.rdbMph.Text = "mph";
+            this.rdbMph.UseVisualStyleBackColor = true;
+            this.rdbMph.CheckedChanged += new System.EventHandler(this.rdbSpeedUnit_CheckedChanged);
+            // 
+            // rdbKmh
+            // 
+            this.rdbKmh.AutoSize = true;
+            this.rdbKmh.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbKmh.Checked = true;
+            this.rdbKmh.Location = new System.Drawing.Point(513, 110);
+            this.rdbKmh.Name = "rdbKmh";
+            this.rdbKmh.Size = new System.Drawing.Size(50, 17);
+            this.rdbKmh.TabIndex = 4;
+            this.rdbKmh.TabStop = true;
+            this.rdbKmh.Text = "km/h";
+            this.rdbKmh.UseVisualStyleBackColor = true;
+            this.rdbKmh.CheckedChanged += new System.EventHandler(this.rdbSpeedUnit_CheckedChanged);
             // 
             // checkBox1
             // 
@@ -408,7 +439,7 @@ namespace Traffic
             65536});
             this.nudTruckMaxSpeedVariability.Location = new System.Drawing.Point(202, 106);
             this.nudTruckMaxSpeedVariability.Maximum = new decimal(new int[] {
-            20,
+            25,
             0,
             0,
             0});
@@ -469,14 +500,15 @@ namespace Traffic
             this.label25.TabIndex = 0;
             this.label25.Text = "+/-";
             // 
-            // label26
+            // lblTruckSpeedCappedUnit
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(250, 108);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(32, 13);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "km/h";
+            this.lblTruckSpeedCappedUnit.AutoSize = true;
+            this.lblTruckSpeedCappedUnit.Location = new System.Drawing.Point(250, 108);
+            this.lblTruckSpeedCappedUnit.Name = "lblTruckSpeedCappedUnit";
+            this.lblTruckSpeedCappedUnit.Size = new System.Drawing.Size(32, 13);
+            this.lblTruckSpeedCappedUnit.TabIndex = 0;
+            this.lblTruckSpeedCappedUnit.Text = "km/h";
+            this.lblTruckSpeedCappedUnit.Click += new System.EventHandler(this.rdbSpeedUnit_CheckedChanged);
             // 
             // label23
             // 
@@ -496,18 +528,18 @@ namespace Traffic
             this.roadblockLabel.TabIndex = 2;
             this.roadblockLabel.Text = "Road block";
             // 
-            // speedVariability
+            // nudSpeedVariability
             // 
-            this.speedVariability.Location = new System.Drawing.Point(399, 22);
-            this.speedVariability.Maximum = new decimal(new int[] {
+            this.nudSpeedVariability.Location = new System.Drawing.Point(399, 22);
+            this.nudSpeedVariability.Maximum = new decimal(new int[] {
             25,
             0,
             0,
             0});
-            this.speedVariability.Name = "speedVariability";
-            this.speedVariability.Size = new System.Drawing.Size(50, 20);
-            this.speedVariability.TabIndex = 1;
-            this.speedVariability.Value = new decimal(new int[] {
+            this.nudSpeedVariability.Name = "nudSpeedVariability";
+            this.nudSpeedVariability.Size = new System.Drawing.Size(50, 20);
+            this.nudSpeedVariability.TabIndex = 1;
+            this.nudSpeedVariability.Value = new decimal(new int[] {
             10,
             0,
             0,
@@ -531,23 +563,23 @@ namespace Traffic
             this.label2.TabIndex = 2;
             this.label2.Text = "Speeder probability";
             // 
-            // speedVariabilityLabel
+            // lblSpeedVariability
             // 
-            this.speedVariabilityLabel.AutoSize = true;
-            this.speedVariabilityLabel.Location = new System.Drawing.Point(275, 26);
-            this.speedVariabilityLabel.Name = "speedVariabilityLabel";
-            this.speedVariabilityLabel.Size = new System.Drawing.Size(118, 13);
-            this.speedVariabilityLabel.TabIndex = 2;
-            this.speedVariabilityLabel.Text = "Speed variability (km/h)";
+            this.lblSpeedVariability.AutoSize = true;
+            this.lblSpeedVariability.Location = new System.Drawing.Point(275, 26);
+            this.lblSpeedVariability.Name = "lblSpeedVariability";
+            this.lblSpeedVariability.Size = new System.Drawing.Size(118, 13);
+            this.lblSpeedVariability.TabIndex = 2;
+            this.lblSpeedVariability.Text = "Speed variability (km/h)";
             // 
-            // label7
+            // lblSpeedVariabilityRange
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(452, 24);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "0 ... 25";
+            this.lblSpeedVariabilityRange.AutoSize = true;
+            this.lblSpeedVariabilityRange.Location = new System.Drawing.Point(452, 24);
+            this.lblSpeedVariabilityRange.Name = "lblSpeedVariabilityRange";
+            this.lblSpeedVariabilityRange.Size = new System.Drawing.Size(40, 13);
+            this.lblSpeedVariabilityRange.TabIndex = 2;
+            this.lblSpeedVariabilityRange.Text = "0 ... 25";
             // 
             // label22
             // 
@@ -675,21 +707,21 @@ namespace Traffic
             this.groupBox2.Controls.Add(this.lblRoadLength);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.vehiclesOnRoadLabel);
-            this.groupBox2.Controls.Add(this.lblStripLength);
+            this.groupBox2.Controls.Add(this.lblStripeLength);
             this.groupBox2.Controls.Add(this.label24);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.aveSpeedLabel);
             this.groupBox2.Controls.Add(this.lblVehiclesExited);
             this.groupBox2.Controls.Add(this.lblVehiclesOnRoad);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.lblRoadLengthUnit);
+            this.groupBox2.Controls.Add(this.lblStripeLengthUnit);
             this.groupBox2.Controls.Add(this.lblRunTime);
-            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Controls.Add(this.lblMaxSpeedUnit);
             this.groupBox2.Controls.Add(this.lblMaxSpeed);
-            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.lblAvgSpeedUnit);
             this.groupBox2.Controls.Add(this.lblAveSpeed);
-            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.lblMinSpeedUnit);
             this.groupBox2.Controls.Add(this.lblMinSpeed);
             this.groupBox2.Location = new System.Drawing.Point(670, 3);
             this.groupBox2.Name = "groupBox2";
@@ -743,14 +775,14 @@ namespace Traffic
             this.vehiclesOnRoadLabel.TabIndex = 0;
             this.vehiclesOnRoadLabel.Text = "Vehicles on road";
             // 
-            // lblStripLength
+            // lblStripeLength
             // 
-            this.lblStripLength.Location = new System.Drawing.Point(98, 26);
-            this.lblStripLength.Name = "lblStripLength";
-            this.lblStripLength.Size = new System.Drawing.Size(35, 13);
-            this.lblStripLength.TabIndex = 0;
-            this.lblStripLength.Text = "---";
-            this.lblStripLength.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblStripeLength.Location = new System.Drawing.Point(98, 26);
+            this.lblStripeLength.Name = "lblStripeLength";
+            this.lblStripeLength.Size = new System.Drawing.Size(35, 13);
+            this.lblStripeLength.TabIndex = 0;
+            this.lblStripeLength.Text = "---";
+            this.lblStripeLength.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label24
             // 
@@ -797,23 +829,23 @@ namespace Traffic
             this.lblVehiclesOnRoad.Text = "0";
             this.lblVehiclesOnRoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label13
+            // lblRoadLengthUnit
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(134, 46);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(21, 13);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "km";
+            this.lblRoadLengthUnit.AutoSize = true;
+            this.lblRoadLengthUnit.Location = new System.Drawing.Point(134, 46);
+            this.lblRoadLengthUnit.Name = "lblRoadLengthUnit";
+            this.lblRoadLengthUnit.Size = new System.Drawing.Size(21, 13);
+            this.lblRoadLengthUnit.TabIndex = 0;
+            this.lblRoadLengthUnit.Text = "km";
             // 
-            // label12
+            // lblStripeLengthUnit
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(134, 26);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(15, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "m";
+            this.lblStripeLengthUnit.AutoSize = true;
+            this.lblStripeLengthUnit.Location = new System.Drawing.Point(134, 26);
+            this.lblStripeLengthUnit.Name = "lblStripeLengthUnit";
+            this.lblStripeLengthUnit.Size = new System.Drawing.Size(15, 13);
+            this.lblStripeLengthUnit.TabIndex = 0;
+            this.lblStripeLengthUnit.Text = "m";
             // 
             // lblRunTime
             // 
@@ -824,14 +856,14 @@ namespace Traffic
             this.lblRunTime.Text = "---";
             this.lblRunTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label19
+            // lblMaxSpeedUnit
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(291, 67);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(32, 13);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "km/h";
+            this.lblMaxSpeedUnit.AutoSize = true;
+            this.lblMaxSpeedUnit.Location = new System.Drawing.Point(291, 67);
+            this.lblMaxSpeedUnit.Name = "lblMaxSpeedUnit";
+            this.lblMaxSpeedUnit.Size = new System.Drawing.Size(32, 13);
+            this.lblMaxSpeedUnit.TabIndex = 0;
+            this.lblMaxSpeedUnit.Text = "km/h";
             // 
             // lblMaxSpeed
             // 
@@ -842,14 +874,14 @@ namespace Traffic
             this.lblMaxSpeed.Text = "---";
             this.lblMaxSpeed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label16
+            // lblAvgSpeedUnit
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(291, 47);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(32, 13);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "km/h";
+            this.lblAvgSpeedUnit.AutoSize = true;
+            this.lblAvgSpeedUnit.Location = new System.Drawing.Point(291, 47);
+            this.lblAvgSpeedUnit.Name = "lblAvgSpeedUnit";
+            this.lblAvgSpeedUnit.Size = new System.Drawing.Size(32, 13);
+            this.lblAvgSpeedUnit.TabIndex = 0;
+            this.lblAvgSpeedUnit.Text = "km/h";
             // 
             // lblAveSpeed
             // 
@@ -860,14 +892,14 @@ namespace Traffic
             this.lblAveSpeed.Text = "---";
             this.lblAveSpeed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
+            // lblMinSpeedUnit
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(291, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "km/h";
+            this.lblMinSpeedUnit.AutoSize = true;
+            this.lblMinSpeedUnit.Location = new System.Drawing.Point(291, 26);
+            this.lblMinSpeedUnit.Name = "lblMinSpeedUnit";
+            this.lblMinSpeedUnit.Size = new System.Drawing.Size(32, 13);
+            this.lblMinSpeedUnit.TabIndex = 0;
+            this.lblMinSpeedUnit.Text = "km/h";
             // 
             // btnStop
             // 
@@ -905,10 +937,10 @@ namespace Traffic
             // 
             this.groupBox1.Controls.Add(this.btnStart);
             this.groupBox1.Controls.Add(this.btnExit);
-            this.groupBox1.Controls.Add(this.saveButton);
+            this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.btnStop);
-            this.groupBox1.Controls.Add(this.loadButton);
+            this.groupBox1.Controls.Add(this.btnLoad);
             this.groupBox1.Location = new System.Drawing.Point(1008, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(213, 135);
@@ -926,25 +958,27 @@ namespace Traffic
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // saveButton
+            // btnSave
             // 
-            this.saveButton.Enabled = false;
-            this.saveButton.Location = new System.Drawing.Point(115, 22);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
-            this.saveButton.TabIndex = 3;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
+            this.btnSave.Enabled = false;
+            this.btnSave.Location = new System.Drawing.Point(115, 22);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // loadButton
+            // btnLoad
             // 
-            this.loadButton.Enabled = false;
-            this.loadButton.Location = new System.Drawing.Point(115, 51);
-            this.loadButton.Name = "loadButton";
-            this.loadButton.Size = new System.Drawing.Size(75, 23);
-            this.loadButton.TabIndex = 3;
-            this.loadButton.Text = "Load";
-            this.loadButton.UseVisualStyleBackColor = true;
+            this.btnLoad.Enabled = false;
+            this.btnLoad.Location = new System.Drawing.Point(115, 51);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 3;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // TrafficSimulator
             // 
@@ -954,17 +988,20 @@ namespace Traffic
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.parameterGroupBox);
+            this.MaximizeBox = false;
             this.Name = "TrafficSimulator";
             this.Text = "Traffic Simulator";
-            ((System.ComponentModel.ISupportInitialize)(this.timeSpeedupUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeBetweenVehiclesUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.truckCarRatioUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeVariabilityUpDown)).EndInit();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Shown += new System.EventHandler(this.this_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeSpeedup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeBetweenVehicles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTruckCarRatio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTimeVariability)).EndInit();
             this.parameterGroupBox.ResumeLayout(false);
             this.parameterGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTruckMaxSpeedVariability)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTruckMaxSpeed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speedVariability)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpeedVariability)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSlowPokeProbability)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSeconds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).EndInit();
@@ -979,13 +1016,13 @@ namespace Traffic
         #endregion
 
         private System.Windows.Forms.Label aveSpeedLabel;
-        private System.Windows.Forms.NumericUpDown timeSpeedupUpDown;
+        private System.Windows.Forms.NumericUpDown nudTimeSpeedup;
         private System.Windows.Forms.Label timeSpeedupLabel;
-        private System.Windows.Forms.NumericUpDown timeBetweenVehiclesUpDown;
+        private System.Windows.Forms.NumericUpDown nudTimeBetweenVehicles;
         private System.Windows.Forms.Label timeBetweenVehiclesLabel;
-        private System.Windows.Forms.NumericUpDown truckCarRatioUpDown;
+        private System.Windows.Forms.NumericUpDown nudTruckCarRatio;
         private System.Windows.Forms.Label truckCarRatioLabel;
-        private System.Windows.Forms.NumericUpDown timeVariabilityUpDown;
+        private System.Windows.Forms.NumericUpDown nudTimeVariability;
         private System.Windows.Forms.Label vehicleVariability;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -994,24 +1031,24 @@ namespace Traffic
         private System.Windows.Forms.GroupBox parameterGroupBox;
         private System.Windows.Forms.Label lblMinSpeed;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMinSpeedUnit;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Label vehiclesOnRoadLabel;
-        private System.Windows.Forms.Label lblStripLength;
+        private System.Windows.Forms.Label lblStripeLength;
         private System.Windows.Forms.Label lblVehiclesOnRoad;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label roadblockLabel;
-        private System.Windows.Forms.NumericUpDown speedVariability;
+        private System.Windows.Forms.NumericUpDown nudSpeedVariability;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label speedVariabilityLabel;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblSpeedVariability;
+        private System.Windows.Forms.Label lblSpeedVariabilityRange;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown nudSpeederProbability;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Button loadButton;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown nudSlowPokeProbability;
@@ -1019,14 +1056,14 @@ namespace Traffic
         private System.Windows.Forms.CheckBox chkPassOnRight;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label vehiclesOffRoadLabel;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblStripeLengthUnit;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblRoadLength;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblMaxSpeedUnit;
         private System.Windows.Forms.Label lblMaxSpeed;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblAvgSpeedUnit;
         private System.Windows.Forms.Label lblAveSpeed;
         private System.Windows.Forms.CheckBox chkFixedSeed;
         private System.Windows.Forms.Label label14;
@@ -1040,14 +1077,16 @@ namespace Traffic
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label lblRunTime;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblRoadLengthUnit;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox chkTruckMaxSpeed;
         private System.Windows.Forms.NumericUpDown nudTruckMaxSpeedVariability;
         private System.Windows.Forms.NumericUpDown nudTruckMaxSpeed;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lblTruckSpeedCappedUnit;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.RadioButton rdbMph;
+        private System.Windows.Forms.RadioButton rdbKmh;
     }
 }
 

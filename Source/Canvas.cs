@@ -12,7 +12,6 @@ namespace Traffic
         private readonly Pen DIVIDER_PEN = new Pen(Color.Black);
         private const float V_OFFSET = 10f;
         #endregion
-
         #region Constants
         private float STRIDE_WIDTH_IN_PIXELS;
         private float HEIGHT_IN_PIXELS;
@@ -28,11 +27,9 @@ namespace Traffic
         private float V_STRIDE;
         private int MAX_PASSING_COUNT;
         #endregion
-
         #region Fields
         TrafficSimulator parent;
         #endregion
-
         #region Constructor
         public Canvas(TrafficSimulator parent)
         {
@@ -46,7 +43,6 @@ namespace Traffic
             this.SizeChanged += new EventHandler(OnSizeChanged);
         }
         #endregion
-
         #region Event handlers
         public void OnPaint(object sender, PaintEventArgs e)
         {
